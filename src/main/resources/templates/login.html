@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Login</title>
+	<link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
+	<script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
+	<script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+
+	<div class="row px-5 py-3 mx-0">
+		<div class="col p-3" style="background-color: #dfdee5;">
+			<div class="d-flex">
+				<h5 class="text-muted fw-bold">Accueil </h5>
+				<h5 class="mx-3 fw-bold">Inscription</h5>
+			</div>
+		</div>
+	</div>
+	<div class="container py-5 d-flex justify-content-center">
+
+		<div class="card" style="min-width: 40rem;">
+			<div th:if="${param.error}">
+				<div class="alert alert-danger">
+					invalid username or password
+				</div>
+			</div>
+			<div class="card-body">
+				<h4 class="card-title fw-bold">Informations personnelles</h4>
+				<form class="text-center" method="post">
+					<div class="mb-3"><input class="form-control" type="email" name="email" placeholder="Email"></div>
+					<div class="mb-3"><input class="form-control" type="password" name="password"
+							placeholder="Mot de passe">
+					</div>
+					<div class="mb-3"><button class="btn btn-primary d-block w-100" type="submit">Se connecter</button>
+					</div>
+
+					<a class="text-muted" th:href="@{/forgotpassword}">Mot de passe oublié? </a>
+				</form>
+			</div>
+		</div>
+	</div>
+	</div>
+</body>
+
+</html>
